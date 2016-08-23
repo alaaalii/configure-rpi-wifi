@@ -137,7 +137,7 @@ class Example(wx.Frame):
 
         time.sleep(waitTime)
 
-        comm = '''sudo python -c "import wifi; scheme = wifi.Scheme.for_cell('wlan0', '{0}', wifi.Cell.where('wlan0', lambda cell: cell.ssid.lower()=='{0}')[0], '{1}'); scheme.save()"'''.format(self.ssid_tc.GetValue().lower(), self.wifipassword_tc.GetValue())
+        comm = '''sudo python -c "import wifi; scheme = wifi.Scheme.for_cell('wlan0', '{0}', wifi.Cell.where('wlan0', lambda cell: cell.ssid.lower()=='{1}')[0], '{2}'); scheme.save()"'''.format(self.ssid_tc.GetValue().lower().replace(' ', '_'), self.ssid_tc.GetValue().lower(), self.wifipassword_tc.GetValue())
         stdin, stdout, stderr = client.exec_command(comm)
         retval = stdout.channel.recv_exit_status()
         out = stdout.readlines()
