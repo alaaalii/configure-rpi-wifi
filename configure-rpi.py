@@ -27,11 +27,11 @@ class Example(wx.Frame):
         self.statusmessages = wx.StaticText(self.panel, label="Status Messages:")
         self.status = wx.StaticText(self.panel, label="")
 
-        self.ip_tc = wx.TextCtrl(self.panel, value='10.10.10.72')
-        self.username_tc = wx.TextCtrl(self.panel, value='pi')
-        self.password_tc = wx.TextCtrl(self.panel, style=wx.TE_PASSWORD, value='dontguess')
-        self.ssid_tc = wx.TextCtrl(self.panel, value='TheSSID')
-        self.wifipassword_tc = wx.TextCtrl(self.panel, style=wx.TE_PASSWORD, value='ThisIsThePassword')
+        self.ip_tc = wx.TextCtrl(self.panel)
+        self.username_tc = wx.TextCtrl(self.panel)
+        self.password_tc = wx.TextCtrl(self.panel, style=wx.TE_PASSWORD)
+        self.ssid_tc = wx.TextCtrl(self.panel)
+        self.wifipassword_tc = wx.TextCtrl(self.panel, style=wx.TE_PASSWORD)
 
         self.push_btn = wx.Button(self.panel, wx.ID_SAVE, label='Push', size=(70, 30))
         self.close_btn = wx.Button(self.panel, wx.ID_EXIT, label='Close', size=(70, 30))
